@@ -787,3 +787,37 @@ body {
   }
 }
 
+
+.clock {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Orbitron', sans-serif; /* digital style font */
+  font-size: 4rem;                       /* large, readable */
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;                   /* glowing cyan effect */
+  background: rgba(0, 0, 0, 0.4);        /* subtle dark background */
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: 1px solid #00ffff;
+  z-index: 1000;
+  pointer-events: none;
+  user-select: none;
+  animation: pulseClock 1.5s infinite alternate;
+}
+
+@keyframes pulseClock {
+  0% {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
+}
+
