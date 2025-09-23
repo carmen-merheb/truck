@@ -721,3 +721,69 @@ body {
   animation: pulse 1s infinite;
 }
 
+
+/* Container */
+.checkpoint {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 999;
+  pointer-events: none;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Current checkpoint time */
+.checkpoint p:first-child {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+  margin: 0;
+  animation: pop 0.3s ease-out;
+}
+
+/* Difference to best time */
+.checkpoint p.green {
+  color: #0f0;
+  text-shadow: 0 0 6px #0f0, 0 0 12px #0f0;
+  font-weight: 600;
+  margin: 0;
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.checkpoint p.red {
+  color: #ff3300;
+  text-shadow: 0 0 6px #ff3300, 0 0 12px #ff3300;
+  font-weight: 600;
+  margin: 0;
+  animation: fadeUp 1s ease-out forwards;
+}
+
+/* Animations */
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
